@@ -10,6 +10,7 @@ export default defineConfig({
     vue(),
     vueDevTools(),
   ],
+  base: '/UAS_SatriaAjiNursahid_TI2B/',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

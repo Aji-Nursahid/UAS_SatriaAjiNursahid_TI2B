@@ -7,6 +7,7 @@ const activeItemDetails = ref<any | null>(null)
 
 const categories = ['All', 'Chiro', 'Gyuro', 'Norimaki Bites', 'Satsuro - Age', 'Dezaro']
 
+const baseUrl = import.meta.env.BASE_URL;
 const menuItems = [
   {
     id: 1,
@@ -225,7 +226,7 @@ const getWhatsAppLink = (itemName: string) => {
           <!-- Product Image & Badges -->
           <div class="relative aspect-[4/3] bg-gray-100 overflow-hidden">
             <img 
-              :src="item.image" 
+              :src="baseUrl + item.image" 
               :alt="item.name" 
               class="w-full h-full object-cover transform group-hover:scale-108 transition-transform duration-500"
             />

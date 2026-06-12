@@ -132,13 +132,14 @@ const deals = [
 ]
 
 // Gallery Images
+const baseUrl = import.meta.env.BASE_URL;
 const galleryImages = [
-  { src: '/images/Chikuro_Gallery1.jpg', alt: 'Gathering eating chikuro!' },
-  { src: '/images/Chikuro_Gallery2.jpg', alt: 'Together with chikuro!' },
-  { src: '/images/Chikuro_Gallery3.jpg', alt: 'Chikuro everyday!' },
-  { src: '/images/Chikuro_Gallery4.jpg', alt: 'Duo chikuro for day!' },
-  { src: '/images/Chikuro_Gallery5.jpg', alt: 'Triple chikuro to save cravings' },
-  { src: '/images/Chikuro_Gallery6.jpg', alt: 'Spicy chikuro, more hot and raise your adrenaline' }
+  { src: 'images/Chikuro_Gallery1.jpg', alt: 'Gathering eating chikuro!' },
+  { src: 'images/Chikuro_Gallery2.jpg', alt: 'Together with chikuro!' },
+  { src: 'images/Chikuro_Gallery3.jpg', alt: 'Chikuro everyday!' },
+  { src: 'images/Chikuro_Gallery4.jpg', alt: 'Duo chikuro for day!' },
+  { src: 'images/Chikuro_Gallery5.jpg', alt: 'Triple chikuro to save cravings' },
+  { src: 'images/Chikuro_Gallery6.jpg', alt: 'Spicy chikuro, more hot and raise your adrenaline' }
 ]
 
 onMounted(() => {
@@ -212,7 +213,7 @@ onMounted(() => {
               :key="index"
               class="swiper-slide rounded-3xl overflow-hidden shadow-premium relative aspect-[16/9] md:aspect-[21/9]"
             >
-              <img :src="slide.image" :alt="slide.title" class="w-full h-full object-cover brightness-[0.65]" />
+              <img :src="baseUrl+slide.image" :alt="slide.title" class="w-full h-full object-cover brightness-[0.65]" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/35"></div>
               
               <!-- unique text overlay -->
@@ -356,7 +357,7 @@ onMounted(() => {
               >
                 <!-- Promo Image Area -->
                 <div class="w-full md:w-1/2 relative aspect-video md:aspect-auto">
-                  <img :src="deal.image" :alt="deal.title" class="w-full h-full object-cover" />
+                  <img :src="baseUrl + deal.image" :alt="deal.title" class="w-full h-full object-cover" />
                   <div class="absolute top-4 left-4 bg-chikuro-red text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md">
                     {{ deal.badge }}
                   </div>
